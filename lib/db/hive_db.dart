@@ -5,7 +5,6 @@ import '../entities/note.dart';
 
 class HiveDB {
   final _box = Hive.box<Note>('notes');
-  // TODO add tag filter
   List<Tuple2<int, Note>> getNoteList({String? tag}) {
     List<Tuple2<int, Note>> noteList = [];
     if (tag != null) {

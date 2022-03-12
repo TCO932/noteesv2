@@ -5,7 +5,6 @@ import 'package:noteesv2/widgets/add_note_popup/note_popup_bloc/note_popup_event
 import '../../entities/note.dart';
 import 'note_popup_bloc/note_popup_bloc.dart';
 
-//  TODO ANOTHER BLOC?
 Future<Note?> addNotePopUp(BuildContext context, Note? oldNote) {
   return showDialog<Note>(
     context: context,
@@ -164,7 +163,7 @@ class _AddNoteWidgetState extends State<AddNoteWidget> {
               createDate: widget.note.createDate,
               editDate: DateTime.now(),
               tags: tags,
-            ), // TODO add new tags
+            ),
             Navigator.pop(context, newNote),
           },
           child: const Text('Сохранить'),
@@ -173,37 +172,3 @@ class _AddNoteWidgetState extends State<AddNoteWidget> {
     );
   }
 }
-
-// List<Widget> tagsBuilder(
-//   context,
-//   List<String> tags,
-//   Widget setState,
-// ) {
-//   List<Widget> tagsWidgets = [];
-//   for (String tag in tags) {
-//     tagsWidgets.add(
-//       Container(
-//         margin: const EdgeInsets.symmetric(horizontal: 1, vertical: 1),
-//         child: DecoratedBox(
-//           decoration: BoxDecoration(
-//               color: Theme.of(context).primaryColor.withAlpha(150),
-//               borderRadius: BorderRadius.circular(9)),
-//           child: SizedBox(
-//             height: 30,
-//             child: TextButton(
-//               style: TextButton.styleFrom(
-//                 padding: EdgeInsets.zero,
-//               ),
-//               child: Text(
-//                 tag,
-//                 style: const TextStyle(color: Colors.white),
-//               ),
-//               onPressed: setState(() => tags.remove(tag)),
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-//   return tagsWidgets;
-// }
